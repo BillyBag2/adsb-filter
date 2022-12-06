@@ -1,4 +1,8 @@
 
+#ifndef __PRIMITIVES_HPP__
+#define __PRIMITIVES_HPP__
+
+#include <cmath>
 /**
  * @brief A point in long lat space. 
  */
@@ -19,6 +23,7 @@ private:
     double latitude;
 };
 
+static const Point bad_point = Point(nan("") ,nan(""));
 /**
  * @brief A class containing a rectangle in long lat space.
  * 
@@ -37,3 +42,5 @@ private:
     double south;
     double north;
 };
+
+#endif
