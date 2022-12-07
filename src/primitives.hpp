@@ -9,6 +9,7 @@
 class Point
 {
 public:
+    Point():longitude(nan("")),latitude(nan("")) {};
     Point(double longitude, double latitude):longitude(longitude),latitude(latitude) {}
     double Longitute()
     {
@@ -18,6 +19,7 @@ public:
     {
         return latitude;
     }
+    bool Valid();
 private:
     double longitude;
     double latitude;

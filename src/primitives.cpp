@@ -12,3 +12,8 @@ bool Region::Contains(Point point)
         (latitude >= south) && 
         (latitude >= south));
 }
+
+bool Point::Valid()
+{
+    return (!std::isnan(longitude)) && (!std::isnan(latitude));
+}
