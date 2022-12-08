@@ -6,33 +6,28 @@
 
 std::string Item(std::string line, int index)
 {
-    //std::cerr << "Line: " << line << std::endl << std::endl ;
     int count = 0;
     int off1 = 0;
     int off2 = 0;
-    //std::cerr << line.size() << std::endl << std::endl ;
+
     for(unsigned int i = 0; i < line.size(); i++)
     {
-        //std::cerr << line[i] << std::endl;
         if(line[i] == ',')
         {
             count ++;
             if(count == (index - 1))
             {
                 off1 = i;
-                //std::cerr << "off1:" << off1 << std::endl;
                 continue;
             }
             if (count == index)
             {
                 off2 = i;
-                //std::cerr << "off2:" << off2 << std::endl;
                 break;
             }
         }
     }
     std::string item = line.substr(off1 + 1, (off2 - off1) - 1);
-    //std::cerr << "Item:" << item << std::endl;
     return item;
 }
 
@@ -81,8 +76,6 @@ Point Message::Coordinates()
         std::string lat_string = Item(line, 15);
         std::string long_string = Item(line, 16);
 
-        // std::cerr << "Coords: " << long_string << "," << lat_string << std::endl;
-
         try
         {
             double latitude = std::stod(lat_string);
@@ -98,9 +91,10 @@ Point Message::Coordinates()
     return point;
 }
 
-std::string Message::Sid()
+std::string Message::HexIdent()
 {
-    return Item(Line(), 3);
+    std::string hex_ident = Item(Line(), 5);
+    return hex_ident;
 }
 
 std::string Message::Line()

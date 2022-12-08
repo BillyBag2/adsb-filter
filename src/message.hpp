@@ -27,7 +27,7 @@ public:
     MessageId Id();
     bool HasCoordinates();
     Point Coordinates();
-    std::string Sid();
+    std::string HexIdent();
     std::string Line();
 private:
     std::string line;

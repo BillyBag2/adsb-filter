@@ -6,6 +6,12 @@ Use net cat (`nc`) commands to manage the streams.
 
 For entertainment only. Not to be used for anything important.
 
+# Prerequisites
+
+ ```
+ apt-get install build-essential
+ ```
+
 # Building
 
 Build...
@@ -25,11 +31,9 @@ make
 
 * At time of writing the region of ineterst was the "U.K".  Would be nice to add more regions. Perhaps as command line parameters.
 
-* At time of writing planes that land inside the region of interest will gradually consume memory. This needs fixing. Restart periodically if an issue. Periodic or count based restart needs too be added. A more advanced aging method could also be added.
-
 * At time of writing the region of interest was a simple single "rectangle" is angular coordinate space. The code could be changed so a more complex region could be made up of a number of "rectangles".
 
-* Error handling may need some improvment.
+* Error handling may need some improvement.
 
 * Only tested on a decompressed VirtualRadar stream. Streams from other sources may not be compatable.
 
